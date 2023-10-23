@@ -17,7 +17,7 @@ pipeline {
           script {
           withKubeConfig(credentialsId: 'kubeconfigplain', contextName: 'minikube') {
           //sh 'kube'
-          git branch: 'main', url: 'https://github.com/manishaverma89/myDevopsProject.git'
+          //git branch: 'main', url: 'https://github.com/manishaverma89/myDevopsProject.git'
           sh 'ls -lart'
          // sh 'kubectl apply -f nginxpod.yml -n devops-tools'
 } }
