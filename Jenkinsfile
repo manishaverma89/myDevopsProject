@@ -20,8 +20,14 @@ pipeline {
           //git branch: 'main', url: 'https://github.com/manishaverma89/myDevopsProject.git'
           sh 'ls -lart'
           sh 'whoami'
-          sh 'kubectl apply -f kubernetes/nginxpod.yml -n devops-tools'
-} }
+          sh 'kubectl apply -f kubernetes/pods/nginxpod.yml -n devops-tools'
+} } 
+    stage('Deploy service'){
+      steps{
+          sh 'kubectl apply -f kubernetes/services/NodePort/deploy_httpd.yml -n devops-tools'
+          sh 'kubectl apply -f kubernetes/services/NodePort/svc.yml -n devops-tools'
+      }
+    }
         }
       }
     }
