@@ -21,8 +21,8 @@ pipeline {
           sh 'ls -lart'
           sh 'whoami'
           sh 'kubectl apply -f kubernetes/pods/nginxpod.yml -n devops-tools'
-          sh 'kubectl apply -f kubernetes/services/nodeport/deploy_httpd.yml -n devops-tools'
-          sh 'kubectl apply -f kubernetes/services/nodeport/svc.yml -n devops-tools'
+          sh 'kubectl apply -f kubernetes/service/nodeport/deploy_httpd.yml -n devops-tools'
+          sh 'kubectl apply -f kubernetes/service/nodeport/svc.yml -n devops-tools'
 } } 
     
         }
